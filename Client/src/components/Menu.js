@@ -16,73 +16,99 @@ import FlagIcon from "@mui/icons-material/Flag";
 import HelpIcon from "@mui/icons-material/Help";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export function Menu() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+  console.log(theme);
+  const handleThemeswitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   return (
-    <section className="flex-1 bg-[#cca89a] h-screen text-white text-sm sticky top-0">
+    <section className="flex-1 bg-[#cca89a] dark:bg-[#443833] h-screen text-white text-sm sticky top-0">
       <div className="pt-[18px] pb-[18px] pr-[26px] pl-[26px]">
-        <div className="flex  items-center  gap-[5px] font-bold mb-[25px] text-[#2d2a22]">
-          <img className="h-[25px]" src={logo} />
-          Practicetube
+        <Link to="/">
+          <div className="flex  items-center  gap-[5px] font-bold mb-[25px] text-[#2d2a22] dark:text-white">
+            <img className="h-[25px]" src={logo} />
+            Practicetube
+          </div>
+        </Link>
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <HomeIcon className="text-[#2d2a22] dark:text-white" /> Home
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <HomeIcon className="text-[#2d2a22] " /> Home
-        </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           {" "}
-          <ExploreIcon className="text-[#2d2a22]" />
+          <ExploreIcon className="text-[#2d2a22] dark:text-white" />
           Explore
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <SubscriptionsIcon className="text-[#2d2a22] " /> Subscription
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <SubscriptionsIcon className="text-[#2d2a22] dark:text-white" />{" "}
+          Subscription
         </div>
-        <br className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#373737]" />
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <VideoLibraryIcon className="text-[#2d2a22] " /> Library
+        <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-[0.5px] border-solid border-[#f7ebe6]" />
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <VideoLibraryIcon className="text-[#2d2a22]  dark:text-white" />{" "}
+          Library
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           {" "}
-          <HistoryIcon className="text-[#2d2a22]" />
+          <HistoryIcon className="text-[#2d2a22] dark:text-white" />
           History
         </div>
-        <br className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#373737]" />
-        <div className="flex flex-col text-[#2d2a22]">
+        <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#ffffff]" />
+        <div className="flex flex-col text-[#2d2a22] dark:text-white">
           Sign in to like video, comment and subscribe
           <button className="flex items-center gap-[5px] mt-[10px] w-[120px] pt-[5px] pb-[5px] pr-[15px] pl-[15px] bg-transparent border-[1px] border-[#fcf8f7] text-[#fcf8f7] font-medium">
             <AccountCircleIcon />
             SIGN IN
           </button>
         </div>
-        <br className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#373737]" />
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <LibraryMusicIcon className="text-[#2d2a22] " /> Music
+        <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#ffffff]" />
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <LibraryMusicIcon className="text-[#2d2a22] dark:text-white" /> Music
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <SportsBasketballIcon className="text-[#2d2a22] " /> Sports
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <SportsBasketballIcon className="text-[#2d2a22] dark:text-white " />{" "}
+          Sports
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px text-[#2d2a22]">
-          <SportsEsportsIcon className="text-[#2d2a22] " /> Games
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px text-[#2d2a22] dark:text-white">
+          <SportsEsportsIcon className="text-[#2d2a22]  dark:text-white" />{" "}
+          Games
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <MovieCreationIcon className="text-[#2d2a22] " /> Movies
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <MovieCreationIcon className="text-[#2d2a22]  dark:text-white" />{" "}
+          Movies
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <ArticleIcon className="text-[#2d2a22] " /> News
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <ArticleIcon className="text-[#2d2a22]  dark:text-white" /> News
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <LiveTvIcon className="text-[#2d2a22] " /> Live
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <LiveTvIcon className="text-[#2d2a22] dark:text-white" /> Live
         </div>
-        <br className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#373737]" />
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <SettingsApplicationsIcon className="text-[#2d2a22] " /> Settings
+        <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#ffffff]" />
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <SettingsApplicationsIcon className="text-[#2d2a22] dark:text-white" />{" "}
+          Settings
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <FlagIcon className="text-[#2d2a22] " /> Report
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <FlagIcon className="text-[#2d2a22] dark:text-white" /> Report
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <HelpIcon className="text-[#2d2a22] " /> Help
+        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+          <HelpIcon className="text-[#2d2a22] dark:text-white" /> Help
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22]">
-          <LightModeIcon className="text-[#2d2a22] " /> LightMode
+        <div
+          className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white"
+          onClick={handleThemeswitch}
+        >
+          <LightModeIcon className="text-[#2d2a22] dark:text-white" /> LightMode
         </div>
       </div>
     </section>
