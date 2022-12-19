@@ -33,82 +33,87 @@ export function Menu() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <section className="flex-1 bg-[#cca89a] dark:bg-[#443833] h-screen text-white text-sm sticky top-0">
-      <div className="pt-[18px] pb-[18px] pr-[26px] pl-[26px]">
+    <section className="flex-1 bg-[#eed6cd] dark:bg-[#443833] h-screen text-white text-sm sticky top-0 border-r-[1px] border-[#9f8378]">
+      <div className="pt-[18px] pb-[18px] pr-[26px] pl-[26px] sticky top-0">
         <Link to="/">
-          <div className="flex  items-center  gap-[5px] font-bold mb-[25px] text-[#2d2a22] dark:text-white">
+          <div className="flex  items-center  gap-[5px] hover:rounded-[10px] font-bold mb-[25px] text-[#2d2a22] dark:text-white text-[18px] hover:scale-105">
             <img className="h-[25px]" src={logo} />
             Practicetube
           </div>
         </Link>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
-          <HomeIcon className="text-[#2d2a22] dark:text-white" /> Home
-        </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <Link to="/">
+          <div className="flex flex-row hover:bg-[#cca89a] hover:rounded-[10px] items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+            <HomeIcon className="text-[#2d2a22] dark:text-white" /> Home
+          </div>
+        </Link>
+        <div className="flex flex-row items-center hover:bg-[#cca89a] hover:rounded-[10px] gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           {" "}
           <ExploreIcon className="text-[#2d2a22] dark:text-white" />
           Explore
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center hover:bg-[#cca89a] hover:rounded-[10px]  gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <SubscriptionsIcon className="text-[#2d2a22] dark:text-white" />{" "}
           Subscription
         </div>
         <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-[0.5px] border-solid border-[#f7ebe6]" />
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center hover:bg-[#cca89a]  hover:rounded-[10px] gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <VideoLibraryIcon className="text-[#2d2a22]  dark:text-white" />{" "}
           Library
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center hover:bg-[#cca89a] hover:rounded-[10px]   gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           {" "}
           <HistoryIcon className="text-[#2d2a22] dark:text-white" />
           History
         </div>
         <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#ffffff]" />
-        <div className="flex flex-col text-[#2d2a22] dark:text-white">
+        <div className="flex flex-col text-[#2d2a22]  dark:text-white ">
           Sign in to like video, comment and subscribe
-          <button className="flex items-center gap-[5px] mt-[10px] w-[120px] pt-[5px] pb-[5px] pr-[15px] pl-[15px] bg-transparent border-[1px] border-[#fcf8f7] text-[#fcf8f7] font-medium">
-            <AccountCircleIcon />
-            SIGN IN
-          </button>
+          <Link to="/signin">
+            <button className="flex items-center  hover:bg-[#cca89a] hover:rounded-[10px] rounded-[10px] gap-[5px] mt-[10px] w-[120px] pt-[5px] pb-[5px] pr-[15px] pl-[15px] bg-transparent border-[1px] border-[#fcf8f7] text-[#000000] font-medium ml-[20px]">
+              <AccountCircleIcon />
+              SIGN IN
+            </button>
+          </Link>
         </div>
         <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#ffffff]" />
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:rounded-[10px] hover:bg-[#cca89a]  cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <LibraryMusicIcon className="text-[#2d2a22] dark:text-white" /> Music
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px]  cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <SportsBasketballIcon className="text-[#2d2a22] dark:text-white " />{" "}
           Sports
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px]  cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px text-[#2d2a22] dark:text-white">
           <SportsEsportsIcon className="text-[#2d2a22]  dark:text-white" />{" "}
           Games
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px]  cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <MovieCreationIcon className="text-[#2d2a22]  dark:text-white" />{" "}
           Movies
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px]  cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <ArticleIcon className="text-[#2d2a22]  dark:text-white" /> News
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px]  cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <LiveTvIcon className="text-[#2d2a22] dark:text-white" /> Live
         </div>
         <hr className="mt-[15px] mb-[15px] mr-[0px] ml-[0px] border-t-[0.5px ] border-[#ffffff]" />
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a]  hover:rounded-[10px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <SettingsApplicationsIcon className="text-[#2d2a22] dark:text-white" />{" "}
           Settings
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <FlagIcon className="text-[#2d2a22] dark:text-white" /> Report
         </div>
-        <div className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
+        <div className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white">
           <HelpIcon className="text-[#2d2a22] dark:text-white" /> Help
         </div>
         <div
-          className="flex flex-row items-center gap-[20px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white"
+          className="flex flex-row items-center gap-[20px] hover:bg-[#cca89a] hover:rounded-[10px] cursor-pointer pt-[7.5px] pb-[7.5px] pr-[0px] pl-[0px] text-[#2d2a22] dark:text-white"
           onClick={handleThemeswitch}
         >
-          <LightModeIcon className="text-[#2d2a22] dark:text-white" /> LightMode
+          <LightModeIcon className="text-[#2d2a22] dark:text-white" />{" "}
+          {theme === "light" ? "Dark" : "Light"}Mode
         </div>
       </div>
     </section>
